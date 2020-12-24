@@ -273,7 +273,7 @@ if __name__=="__main__":
 	#########################################################################
 	fn_given = 0.1
 	fp_given = 1e-8
-	missing_data_threshold = 5
+	missing_data_threshold = 1
 	out_path = "./"
 	data_path = ""
 	cell_names_path = ""
