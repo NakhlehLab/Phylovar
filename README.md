@@ -5,9 +5,6 @@ python NJ_and_search.py -in loci.mpileup -names cellNames.txt -out ./results -mt
 ```
 
 ## option-definition
-
-* [option-definition](#module_option-definition)
-    * [OptionDefinition](#exp_module_option-definition--OptionDefinition) ⏏
         * [.name](#module_option-definition--OptionDefinition+name) : <code>string</code>
         * [.type](#module_option-definition--OptionDefinition+type) : <code>function</code>
         * [.alias](#module_option-definition--OptionDefinition+alias) : <code>string</code>
