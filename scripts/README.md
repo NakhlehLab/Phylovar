@@ -5,3 +5,4 @@ Neighbor-joining algorithm is used for initializing the tree topology. Given a t
 ## Nearest Neighbor Interchange (NNI)
 One of the techniques to search for new topologies given a topology. NNI swaps one of the subtrees under a certain internal node with the sister subtree of that internal node. `NNI.py` performs NNI on a given tree and returns all the possible topologies. NNI emulates a local search in the space of tree topologies. 
 ## Subtree Pruning and Regrafting (SPR)
+SPR refers to a technique where a subtree is pruned from the main tree and is reattached/regrafted to another internal branch of the main tree. `SPR.py` performs this technique on all the subtrees and returns all the possible new topologies. 
