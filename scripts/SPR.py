@@ -1,6 +1,6 @@
 import numpy as np 
 import ete3 
-from ete3 import Tree, TreeStyle
+from ete3 import Tree
 import argparse
 import random
 import sys
