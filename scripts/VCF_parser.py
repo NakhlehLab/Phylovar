@@ -1,0 +1,94 @@
+import numpy as np
+import sys
+import os
+import gc
+
+def chr_extract(chr_):
+	if chr_[-1]=="X" or chr_[-1]=="x":
+		return 23
+	elif chr_[-1]=="Y" or chr_[-1]=="y":
+		return 24
+	else:
+		chrString = ""
+		for i in chr_:
+			if i.isdigit():
+				chrString+=i
+		return int(chrString)
+def genotype(str_, mchar):
+	###### the missing data is denoted by -1
+	if str_=="0/0":
+		return 0
+	elif str_=="0/1" or str_=="1/1" or str_=="1/0":
+		return 1
+	elif str_=="./.":
+		return mchar
+	else:
+		print("Unidentified genotype")
+		return None
+def phred(ph):
+	if ph == "./.":
+		return 0.5
+	else:
+		ph = ph.split(",")
+		g0 = int(ph[0])
+		g01 = int(ph[1])
+		g11 = int(ph[2])
+
+		g0prob = pow(10,-1*g0/10)
+		g01prob = pow(10,-1*g01/10)
+		g11prob = pow(10,-1*g11/10)
+
+		mutation_prob = g01prob + g11prob
+		sum_prob = g0prob + g01prob + g11prob
+		return mutation_prob/sum_prob
+
+def parse_vcf(file_address, mchar, tail=True, phred_s=False):
+	chroms = []
+	positions = []
+	names = []
+	genotypes = []
+	phred_scores = []
+	with open(file_address, "r") as infile:
+		for line in infile:
+			if "#CHROM" in line:
+				if "CT" in line:
+					line = line.replace("\tCT", "")
+				arr = line.strip().split('\t')[9:]
+				# print arr
+				# print len(arr)
+				names = arr
+			if not "#" in line:
+				genotypes.append([])
+				phred_scores.append([])
+				arr = line.strip().split('\t')
+				current_chrom = chr_extract(arr[0])
+				chroms.append(current_chrom)
+				positions.append(int(arr[1]))
+				# print current_chrom
+				# print positions[len(positions)-1]
+				# print arr[9:-1]
+				# print len(arr[9:-1])
+				if tail:
+					for raw_gt in arr[9:-1]:
+						gt_arr = raw_gt.split(":")
+						# print genotype(gt_arr[0])
+						genotypes[len(genotypes)-1].append(genotype(gt_arr[0],mchar))
+						if phred_s:
+							phred_scores[len(genotypes)-1].append(phred(gt_arr[-1]))
+				else:
+					for raw_gt in arr[9:]:
+						gt_arr = raw_gt.split(":")
+						# print genotype(gt_arr[0])
+						genotypes[len(genotypes)-1].append(genotype(gt_arr[0],mchar))
+						if phred_s:
+							phred_scores[len(genotypes)-1].append(phred(gt_arr[-1]))
+				# break
+	genotypes = np.array(genotypes)
+	if phred_s:
+		phred_scores = np.array(phred_scores)
+		return (genotypes.T, positions, chroms, names, phred_scores.T)
+	else:
+		return (genotypes.T, positions, chroms, names)
+
+if __name__=="__main__":
+	parse_vcf(file_address="/Users/edrisi/Documents/scalable_scVILP/data/run_50/output.vcf", mchar = -10)
