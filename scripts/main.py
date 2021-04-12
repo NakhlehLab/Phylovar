@@ -4,7 +4,7 @@
 # Created Date: Sun April 11 2021
 # Python Version: 2.7
 # =============================================================================
-"""The Module is the main code in the implementation of Phylovar algorithm 
+"""The module is the main code in the implementation of Phylovar algorithm 
  for SNV detection. It detects the mutations from the candidate loci while 
  contrsucting a phylogeny though a hill climbing search """
 # =============================================================================
