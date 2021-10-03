@@ -49,6 +49,7 @@ def perform_NNI(tree, selection, choice_):
 
 
 	return tree
+	
 def Main(in_tree, N):
 	''' Since it is not possible to deal with all the 
 	NNI rearrangements given a topology, we randomly sample 
