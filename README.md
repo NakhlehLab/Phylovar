@@ -1,4 +1,6 @@
 # Phylovar 
+## How to install required packages 
+Phylovar requires ete3 and Dendropy python libraries
 ## Usage
 ```
 python main.py -names cellnames.txt -out ./output/ -indir ./input/ 
