@@ -1,7 +1,8 @@
 # Phylovar 
 ## Usage
 ```
-python main.py -names cellnames.txt -out ./output/ -indir ./input/ -infile mpileup.mpileup -mdthr 1 -niter 100000 -stoch yes -M 1 -c 1 -verbose yes -errN 100
+python main.py -names cellnames.txt -out ./output/ -indir ./input/ 
+-infile mpileup.mpileup -mdthr 1 -niter 100000 -stoch yes -M 1 -c 1 -verbose yes -errN 100
 ```
 
 ## option-definition
