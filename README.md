@@ -1,6 +1,6 @@
 # Phylovar
 Phylovar is a likelihood-based method for joint inference of SNVs and cell lineages from SCS datasets consisting of a large number of loci. It is implemented fully in Python and benefits from the vectorized operations in NumPy to scale up to millions of loci. 
-To run Phylovar, you need to install Python (version 2.7>). In the recent versions of Python, Numpy, and Scipy are installed as built-in libraries. However, if you do not have them installed, you can install them using the following commands for either pip or conda installation:
+To run Phylovar, you need to install Python (version >2.7). In the recent versions of Python, Numpy, and Scipy are installed as built-in libraries. However, if you do not have them installed, you can install them using the following commands for either pip or conda installation:
 ### Pip installation
 ```
 pip install numpy
@@ -40,3 +40,6 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 * -c : number of hill-climbing chains with different seeds
 * -verbose : whether to print the iteration info or not (yes, no)
 * -errN : number of iterations per which to sample new error rates
+
+## Contact
+If you have any questions, please contact edrisi@rice.edu
