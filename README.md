@@ -22,6 +22,15 @@ pip install DendroPy
 ``` conda install -c etetoolkit ete3 ```
 ``` conda install -c bioconda dendropy```
 ## Usage
+After you downloaded the repository, go to the scripts, and use the following command to make the code executable:
+```
+chmod +x ./phylovar.py
+```
+To test the code, in command-line, enter:
+```
+./phylovar.py --help
+```
+This will show the description of the arguments.
 ```
 python main.py -names cellnames.txt -out ./output/ -indir ./input/ 
 -infile mpileup.mpileup -mdthr 1 -niter 100000 -stoch yes -M 1 -c 1 -verbose yes -errN 100
