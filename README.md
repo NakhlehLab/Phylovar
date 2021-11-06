@@ -1,7 +1,7 @@
 # Phylovar 
 ## Usage
 ```
-python NJ_and_search.py -in loci.mpileup -names cellNames.txt -out ./results -mthdr 1 -fn 0.2 
+python main.py -names cellnames.txt -out ./output/ -indir ./input/ -infile mpileup.mpileup -mdthr 1 -niter 100000 -stoch yes -M 1 -c 1 -verbose yes -errN 100
 ```
 
 ## option-definition
