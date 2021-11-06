@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # =============================================================================
 # File name: main.py
 # Created By  : Mohammadamin Edrisi
@@ -591,7 +592,7 @@ if __name__ == "__main__":
     # =================== #
     ap = argparse.ArgumentParser()
     ap.add_argument("-names", "--names", required=True,
-                    help="file containing the cell names in the same directory as the output directory")
+                    help="name of the file containing the cell names (in the input directory)")
     ap.add_argument("-tm", "--tm", required=False,
                     help="tab-separated file containing the true mutations (for simulation purposes)")
     ap.add_argument("-out", "--out", required=False, help="path to the output directory")
@@ -604,8 +605,8 @@ if __name__ == "__main__":
     ap.add_argument("-intree", "--intree", required=False,
                     help="path to the initial tree for topology search (in newick format). If not given, a NJ tree is created as initial tree")
     ap.add_argument("-infile", "--infile", required=True,
-                    help="name of the input mpileup file in the same directory as the output directory")
-    ap.add_argument("-mdthr", "--mdthr", required=False, help="minimum coverage for each ref-var pair, default value 1",
+                    help="name of the input mpileup file (in the input directory)")
+    ap.add_argument("-mdthr", "--mdthr", required=False, help="minimum coverage for each ref-var pair",
                     default=1, type=int)
     ap.add_argument("-mode", "--mode", required=False,
                     help="boolean argument indicating whether the code is used for simulation study (1) or real data analysis (0)",
