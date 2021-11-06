@@ -1,6 +1,8 @@
 # Phylovar 
 ## How to install required packages 
-Phylovar requires ete3 and Dendropy python libraries
+Phylovar requires ete3 and Dendropy python libraries. 
+``` conda install -c etetoolkit ete3 ```
+``` conda install -c bioconda dendropy```
 ## Usage
 ```
 python main.py -names cellnames.txt -out ./output/ -indir ./input/ 
