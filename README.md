@@ -32,7 +32,7 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 * -out : path to the output directory
 * -names : name of the file containing the cell names (in the input directory)
 * -infile : name of the input mpileup file (in the input directory)
-* -mthdr : missing data threshold (default value is 1)
+* -mdthr : missing data threshold (default value is 1)
 * -niter : number of iterations
 * -stoch : whether the search is stochastic or not (yes, no)
 * -w : number of iterations to wait before termination (for regular hill-climbing search, when stoch=no)
