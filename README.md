@@ -1,7 +1,7 @@
 # Phylovar
 Phylovar is a likelihood-based method for joint inference of SNVs and cell lineages from SCS datasets consisting of a large number of loci. It is implemented fully in Python and benefits from the vectorized operations in NumPy to scale up to millions of loci. 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/31323695/153480241-bbd4cdc0-28ad-45db-b646-30bec6d6d72f.png" width="500">
+<img src="https://user-images.githubusercontent.com/31323695/153480241-bbd4cdc0-28ad-45db-b646-30bec6d6d72f.png" width="400">
 </p>
 
 ## How to install required packages 
