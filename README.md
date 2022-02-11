@@ -34,7 +34,7 @@ To test the code, in command-line, enter:
 ```
 ./phylovar.py --help
 ```
-This will show the description of the arguments.
+This will show the description of the arguments. Below you can see an example command for running Phylovar.
 ```
 python main.py -names cellnames.txt -out ./output/ -indir ./input/ 
 -infile mpileup.mpileup -mdthr 1 -niter 100000 -stoch yes -M 1 -c 1 -verbose yes -errN 100
