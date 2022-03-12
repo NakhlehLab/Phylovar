@@ -100,8 +100,15 @@ def parse_vcf(file_address, mchar, tail=True, phred_s=False, annotations=False):
 					effs = []
 					gens = []
 					w = arr[7].split(";")
+					idx = 0
+					for p in range(len(w)):
+						if "ANN" in w[p]:
+							idx = p
+							break
+						else:
+							pass
 					if len(w)>1:
-						(effs, gens) = get_info(w[1])
+						(effs, gens) = get_info(w[p])
 					else:
 						pass
 					effects_.append(effs)
@@ -116,6 +123,7 @@ def parse_vcf(file_address, mchar, tail=True, phred_s=False, annotations=False):
 	elif not phred_s and annotations:
 		return (genotypes.T, positions, chroms, names, genes_, effects_)
 	else:
+		phred_scores = np.array(phred_scores)
 		return (genotypes.T, positions, chroms, names, phred_scores.T, genes_, effects_)
 
 if __name__=="__main__":
