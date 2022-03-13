@@ -51,5 +51,7 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 * -verbose : whether to print the iteration info or not (yes, no)
 * -errN : number of iterations per which to sample new error rates
 
+
+## Reproducibility
 ## Contact
 If you have any questions, please contact edrisi@rice.edu
