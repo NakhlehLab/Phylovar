@@ -53,5 +53,6 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 
 
 ## Reproducibility
+To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI
 ## Contact
 If you have any questions, please contact edrisi@rice.edu
