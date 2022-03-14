@@ -53,6 +53,8 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 
 
 ## Reproducibility
-To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI
+Here are the instructions for reproducing the results of the TNBC data containing 32 single-cells from a triple-negative breast cancer patient that is presented in the Phylovar paper.
+### Filtering the non-informative sites
+To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI. After installation, copy the modified scripts named 
 ## Contact
 If you have any questions, please contact edrisi@rice.edu
