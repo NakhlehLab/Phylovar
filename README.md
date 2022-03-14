@@ -55,7 +55,7 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 ## Reproducibility
 Here are the instructions for reproducing the results of the TNBC data containing 32 single-cells from a triple-negative breast cancer patient that is presented in the Phylovar paper.
 ### 1) Filtering the non-informative sites
-#### a) Install SCIPhi and prepare the scripts
+#### a) Install SCIPhi with the modified scripts
 To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI. Before installing SCIPhi, copy the modified scripts named `findBesttrees.cpp` and `readData.h` from the directory `sciphi_modified_scripts`. Then go to the `src` directory of SCIPhi and replace the files having the same names in there. These two modified files make SCIPhi to run only the initial statistic test for filtering the non-informative genomic loci without running the entire SCIPhi algorithm.
 #### b) Run `global_index_conversion.py` on the mpileup file
 Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files into a *global* indexing starting from 1 to *N*  (the total number of positions), we wrote a simple script to make a copy of the original mpileup file with global indices. Go to `indexing_scripts` directory, change the `mpileup_path` (path to the original mpileup file) and `out_path` (path to the new mpileup file with global indices). Then, run the code using:
