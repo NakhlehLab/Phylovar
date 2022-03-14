@@ -75,7 +75,11 @@ Here are the instructions for reproducing the results of the TNBC data containin
      
      The cell names of the TNBC data is provided in `data` directory of this repository named `cellNames.txt`. The diploid cells are tagged with *n* and used as control normal samples, so we labeled them with *CN* 
    - #### Run SCIPhi's statistic test algorithm to filter the non-informative sites
-     
+     Given the mpileup file with global indices (say, `tnbc_global_idx.mpileup`) and the list of cell names (say, `cellNames.txt`), go to SCIPhi `build` directory and run SCIPhi using the following command:
+     ```
+     cat <path to tnbc_global_idx.mpileup> | ./sciphi -o results --in <path to cellNames.txt>
+     ```
+     This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test.
 2. ### Running Phylovar on TNBC data
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
