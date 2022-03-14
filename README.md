@@ -58,7 +58,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
 #### a) Install SCIPhi and prepare the scripts
 To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI. After installation, copy the modified scripts named `findBesttrees.cpp` and `readData.h` from the directory `sciphi_modified_scripts`. Then go to the `src` directory of SCIPhi and replace the files having the same names in there. These two modified files make SCIPhi to run only the initial statistic test for filtering the non-informative genomic loci without running the entire SCIPhi algorithm.
 #### b) Run `indexer.py` on the mpileup file
-Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files to a -- global --
+Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files to a **global**
 #### c) Run `global_index_conversion.py` on the mpileup file
 ### 2) Running Phylovar on TNBC data
 ## Contact
