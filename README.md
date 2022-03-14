@@ -68,6 +68,7 @@ To preserve the original positions, we stored the global index, chromosome index
 ```
 python indexer.py
 ```
+This will output the csv file (e.g. `index.csv`)
 ### 2) Running Phylovar on TNBC data
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
