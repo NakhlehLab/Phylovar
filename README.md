@@ -71,7 +71,10 @@ Here are the instructions for reproducing the results of the TNBC data containin
      This will output the csv file (e.g. `index.csv`)
    - #### Prepare the list of cell names
      Along with the mpileup file, SCIPhi takes as input a list of cell names with their labels. According to the instructions in the Github repository of SCIPhi:
-     > run SCIPhI using the cell names provided in cellNames.txt (same order as in the mpileup file). Note that cellNames.txt is a tab delimited file with the cell name in the first column and a cell type identifier in the second column. The cell type can be either CT (tumor cell), CN (control normal cell), or BN (control bulk normal) 
+     > run SCIPhI using the cell names provided in cellNames.txt (same order as in the mpileup file). Note that cellNames.txt is a tab delimited file with the cell name in the first column and a cell type identifier in the second column. The cell type can be either CT (tumor cell), CN (control normal cell), or BN (control bulk normal)
+     The cell names of the TNBC data is provided in `data` directory of this repository named `cellNames.txt`. 
+   - #### Run SCIPhi's statistic test algorithm to filter the non-informative sites
+     
 2. ### Running Phylovar on TNBC data
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
