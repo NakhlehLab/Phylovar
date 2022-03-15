@@ -100,7 +100,13 @@ Here are the instructions for reproducing the results of the TNBC data containin
    phylovar.py -names cellNames.txt -out ./data/output/ -indir ./data/ -infile tnbc_local_idx.mpileup -mdthr 1 -mode 0 -niter 100000 -stoch 1 -M 5 -c 10 -verbose yes -errN 100
    ```
    The above command runs Phylovar on `tnbc_local_idx.mpileup` with 10 hill-climbing chains (`-c 10`), on a pool of 5 cores (`-M 5`) each for 100000 iterations (`-niter 100000`) using stochastic hill-climbing (`-stoch 1`). After each 100 iterations, the false-positive and false-negative error rates are sampled (`-errN 100`).
+   A zip file containing the outputs of Phylovar is provided in `data` directory, named `output.zip`. We ran Phylovar with Python 2.7, on a pool of five CPU’s, each with 48 cores (AMD EPYC 7642) on a node with 192 GB RAM.
 3. ### Description of the outputs
+   The output folder contains:
+   - `phylovar_stats.txt`: summary of running time, estimated false-negative and false-positive rates, and the log-likelihood value from the best hill-climbing chain.
+   - `info.csv`: summary table of Robinson-Foulds distances between the trees found by different hill-climbing chains.
+   - `snv.vcf`: the VCF file containing the inferred genotypes from the best hill-climbing chain.
+   - `outputs`: a folder containing the thread-specific results including the VCF files from each hill-climbing chain. The names of the subdirectories are in the form of `p<number of the thread>`. In each subdirectory, the corresponding VCF file is named as `snv.vcf`.
    
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
