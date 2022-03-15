@@ -83,7 +83,8 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test.
    - #### Run `local_index_recovery.py`
-     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py` given the copy of the original mpileup file with global indices (`tnbc_global_idx.mpileup`), the csv file containing all the indices (`index.csv`), and the output of SCIPhi filtering (`genotype_matrix.csv`). Change the paths to these files plus the path to the output https://github.com/NakhlehLab/Phylovar/blob/faf19554c148ededcbe05f89ddd1f074b0bbdee2/indexing_scripts/local_index_recovery.py#L2-L5. Then, run the following:
+     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py` given the copy of the original mpileup file with global indices (`tnbc_global_idx.mpileup`), the csv file containing all the indices (`index.csv`), and the output of SCIPhi filtering (`genotype_matrix.csv`). Change the paths to these files plus the path to the output https://github.com/NakhlehLab/Phylovar/blob/faf19554c148ededcbe05f89ddd1f074b0bbdee2/indexing_scripts/local_index_recovery.py#L2-L5. 
+     Then, run the following:
      ```
      python local_index_recovery.py
      ```
