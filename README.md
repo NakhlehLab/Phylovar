@@ -64,7 +64,8 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      This will output a new mpileup (e.g. `tnbc_global_idx.mpileup`)
    - #### Run `indexer.py` on the mpileup file
-     To preserve the original positions, we stored the global index, chromosome index, and the original local index of the positions into a file named `index.csv`. To create this file (which will be used later for recovering the local indices), go to `indexing_scripts`, change the `mpileup_path` (path to the original mpileup file) https://github.com/NakhlehLab/Phylovar/blob/6287c8f9a6912b59880d703fc26280ce46dc6a2e/indexing_scripts/indexer.py#L2 and `index_path` (path to the csv file containing all the indices), and run the following:
+     To preserve the original positions, we stored the global index, chromosome index, and the original local index of the positions into a file named `index.csv`. To create this file (which will be used later for recovering the local indices), go to `indexing_scripts`, change the `mpileup_path` (path to the original mpileup file) and `index_path` (path to the csv file containing all the indices), https://github.com/NakhlehLab/Phylovar/blob/8f707b6f552a5058402310c784b1b08f7f928b4b/indexing_scripts/indexer.py#L2-L3 
+     then run the following:
      ```
      python indexer.py
      ```
