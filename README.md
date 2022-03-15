@@ -1,4 +1,4 @@
-# Phylovar: ## Towards scalable phylogeny-aware inference of single-nucleotide variations from single-cell DNA sequencing data
+# Phylovar
 Phylovar is a likelihood-based method for joint inference of SNVs and cell lineages from SCS datasets consisting of a large number of loci. It is implemented fully in Python and benefits from the vectorized operations in NumPy to scale up to millions of loci. 
 
 ## How to install required packages 
