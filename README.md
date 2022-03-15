@@ -64,7 +64,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      This will output a new mpileup (e.g. `tnbc_global_idx.mpileup`)
    - #### Run `indexer.py` on the mpileup file
-     To preserve the original positions, we stored the global index, chromosome index, and the original local index of the positions into a file named `index.csv`. To create this file (which will be used later for recovering the local indices), go to `indexing_scripts`, change the `mpileup_path` (path to the original mpileup file) and `index_path` (path to the csv file containing all the indices), and run the following:
+     To preserve the original positions, we stored the global index, chromosome index, and the original local index of the positions into a file named `index.csv`. To create this file (which will be used later for recovering the local indices), go to `indexing_scripts`, change the `mpileup_path` (path to the original mpileup file) https://github.com/NakhlehLab/Phylovar/blob/6287c8f9a6912b59880d703fc26280ce46dc6a2e/indexing_scripts/indexer.py#L2 and `index_path` (path to the csv file containing all the indices), and run the following:
      ```
      python indexer.py
      ```
@@ -87,6 +87,5 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
 2. ### Running Phylovar on TNBC data
    After creating the files described in [Filtering the non-informative sites](https://github.com/NakhlehLab/Phylovar/blob/main/README.md#filtering-the-non-informative-sites), we have all the inputs ready for Phylovar. 
-   https://github.com/NakhlehLab/Phylovar/blob/6287c8f9a6912b59880d703fc26280ce46dc6a2e/indexing_scripts/indexer.py#L2
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
