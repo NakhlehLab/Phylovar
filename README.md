@@ -86,6 +86,6 @@ Here are the instructions for reproducing the results of the TNBC data containin
      python local_index_recovery.py
      ```
 2. ### Running Phylovar on TNBC data
-   After the files described in [Filtering the non-informative sites](###Filtering the non-informative sites)
+   After the files described in [Filtering the non-informative sites](#Filtering the non-informative sites)
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
