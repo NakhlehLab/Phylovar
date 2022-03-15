@@ -87,5 +87,6 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
 2. ### Running Phylovar on TNBC data
    After creating the files described in [Filtering the non-informative sites](https://github.com/NakhlehLab/Phylovar/blob/main/README.md#filtering-the-non-informative-sites), we have all the inputs ready for Phylovar. 
+   https://github.com/NakhlehLab/Phylovar/blob/6287c8f9a6912b59880d703fc26280ce46dc6a2e/indexing_scripts/indexer.py#L2
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
