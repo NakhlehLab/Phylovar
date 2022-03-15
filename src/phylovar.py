@@ -276,7 +276,7 @@ def Search_sequential(arguments):
     idx = np.argwhere(a + b >= args.mdthr)
 
 
-    random.seed(thread_num+1)
+    random.seed(thread_num)
     # load the numpy array of initial matrix
     p_ = args.out + "outputs/"+"p"+str(thread_num)+"/"
     if not os.path.isdir(p_):
