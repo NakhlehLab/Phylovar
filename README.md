@@ -90,5 +90,8 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
 2. ### Running Phylovar on TNBC data
    After creating the files described in [Filtering the non-informative sites](https://github.com/NakhlehLab/Phylovar/blob/main/README.md#filtering-the-non-informative-sites), we have all the inputs ready for Phylovar. 
+   ```
+   phylovar.py -names cellNames.txt -out /shared/mae6/snv_calling_data/test/output/ -indir /shared/mae6/snv_calling_data/test/ -infile tnbc_local_idx.mpileup -mdthr 1 -mode 0 -niter 100000 -stoch 1 -M 5 -c 10 -verbose yes -errN 100
+   ```
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
