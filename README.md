@@ -94,7 +94,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
    phylovar.py -names cellNames.txt -out ./data/output/ -indir ./data/ -infile tnbc_local_idx.mpileup -mdthr 1 -mode 0 -niter 100000 -stoch 1 -M 5 -c 10 -verbose yes -errN 100
    ```
    The above command runs Phylovar on `tnbc_local_idx.mpileup` with 10 hill-climbing chains (`-c 10`), on a pool of 5 cores (`-M 5`) each for 100000 iterations (stochastic hill-climbing). After each 100 iterations, the false-positive and false-negative error rates are sampled (`-errN 100`).
-3. ### Description of outputs
+3. ### Description of the outputs
    
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
