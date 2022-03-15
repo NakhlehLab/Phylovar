@@ -3,7 +3,7 @@ Phylovar is a likelihood-based method for joint inference of SNVs and cell linea
 
 ## Description of the directories
    - `src`: contains all the source codes of Phylovar
-   - `data`: contains an example dataset (referred to as TNBC data in the paper) including the necessary files for reproducing the result of Phylovar on this data as presented in the paper (the list of cell names and pre-processed mpileup) and a zipped file containing the outputs of Phylovar.
+   - `data`: contains an example dataset (referred to as TNBC data in the paper). It includes the necessary files for reproducing the result of Phylovar on this data as presented in the paper (the list of cell names and pre-processed mpileup) and a zipped file containing the outputs of Phylovar.
    - `indexing_scripts`: contains the three scripts needed for processing the mpileup files before and after SCIPhi's initial filtering.
    - `sciphi_modified_scripts`: contains two scripts we modified in order to utilize SCIPhi's filtering algorithm in our work.
 
