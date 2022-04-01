@@ -79,7 +79,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
    - #### Run SCIPhi's statistic test algorithm to filter the non-informative sites
      Given the mpileup file with global indices (say, `tnbc_global_idx.mpileup`) and the list of cell names (say, `cellNames.txt`), go to SCIPhi `build` directory and run SCIPhi using the following command:
      ```
-     cat <path to tnbc_global_idx.mpileup> | ./sciphi -o results --in <path to cellNames.txt>
+     cat <path to tnbc_global_idx.mpileup> | ./sciphi -o results --in ./cellNames.txt
      ```
      This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test. After this step, run the following command on `genotype_matrix.csv` to remove the duplicated lines in the file:
      ```
