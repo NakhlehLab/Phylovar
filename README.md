@@ -68,7 +68,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
    - #### Run `global_index_conversion.py` on the original mpileup file
      Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files into a *global* indexing starting from 1 to *N*  (the total number of positions), we wrote a simple script to make a copy of the original mpileup file with global indices. Go to `indexing_scripts` directory, and run `global_index_conversion.py` by specifying two arguments, namely, the `-mpileup` which is path to the original mpileup file and `-out` which is path to the new mpileup file with global indices. For example:
      ```
-     python global_index_conversion.py -mpileup /path_to_the_mpileup_directory/tnbc.mpileup -out /path_to_the_output_directory/tnbc_global_idx.mpileup
+     python global_index_conversion.py -mpileup ./tnbc.mpileup -out ./tnbc_global_idx.mpileup
      ```
      This will output a new mpileup (e.g. `tnbc_global_idx.mpileup`)
    - #### Prepare the list of cell names
@@ -83,11 +83,11 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test.
    - #### Run `local_index_recovery.py`
-     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py` given the copy of the original mpileup file with global indices (`tnbc_global_idx.mpileup`), the csv file containing all the indices (`index.csv`), and the output of SCIPhi filtering (`genotype_matrix.csv`). Change the paths to these files plus the path to the output: https://github.com/NakhlehLab/Phylovar/blob/faf19554c148ededcbe05f89ddd1f074b0bbdee2/indexing_scripts/local_index_recovery.py#L2-L5 
-     Then, run the following:
+     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py`. `local_index_recovery.py` works with three arguments, `-mpileup` which is the original mpileup file with actual indices (`tnbc.mpileup`), `-sciphi` which is the output of SCIPhi filtering (`genotype_matrix.csv`), and `-out` which is the path to the output. The following is an example command to run this code:
      ```
-     python local_index_recovery.py
+     python local_index_recovery.py -mpileup ./tnbc.mpileup -sciphi ./genotype_matrix.csv -out ./tnbc_local_idx.mpileup
      ```
+     This command will produce `tnbc_local_idx.mpileup` which is the mpileup that only contains the loci selected by SCIPhi. This is the input to Phylovar.
 2. ### Running Phylovar on TNBC data
    After creating the files described in [Filtering the non-informative sites](https://github.com/NakhlehLab/Phylovar/blob/main/README.md#filtering-the-non-informative-sites), we have all the inputs ready for Phylovar. Put the list of cell names (e.g. `cellNames.txt`) and the pre-processed mpileup (e.g. `tnbc_local_idx.mpileup`) into the same folder (like `data` in this repository). Then run the following command to run Phylovar:
    ```
