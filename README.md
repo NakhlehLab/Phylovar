@@ -83,16 +83,16 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test. After this step, run the following command on `genotype_matrix.csv` to remove the duplicated lines in the file:
      ```
-     awk -F',' 'NF==17{print}{}' genotype_matrix.csv | sort | uniq
+     cut -f1-17 -d',' genotype_matrix.csv | uniq > genotype_matrix_new.csv
      ```
      Since the number of cancer cells in the TNBC data is 16, we used 17 (16+1) as the number of fields in the above command (`NF==17{print}{}`). The general form of the above command is:
      ```
-     awk -F',' 'NF==<number of cancer cells + 1>{print}{}' genotype_matrix.csv | sort | uniq
+     cut -f1-<number of cancer cells + 1> -d',' genotype_matrix.csv | uniq > genotype_matrix_new.csv
      ```
    - #### Run `local_index_recovery.py`
      To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py`. `local_index_recovery.py` works with three arguments, `-mpileup` which is the original mpileup file with actual indices (`tnbc.mpileup`), `-sciphi` which is the output of SCIPhi filtering (`genotype_matrix.csv`), and `-out` which is the path to the output. The following is an example command to run this code:
      ```
-     python local_index_recovery.py -mpileup ./tnbc.mpileup -sciphi ./genotype_matrix.csv -out ./tnbc_local_idx.mpileup
+     python local_index_recovery.py -mpileup ./tnbc.mpileup -sciphi ./genotype_matrix_new.csv -out ./tnbc_local_idx.mpileup
      ```
      This command will produce `tnbc_local_idx.mpileup` which is the mpileup that only contains the loci selected by SCIPhi. This is the input to Phylovar.
 2. ### Running Phylovar on TNBC data
