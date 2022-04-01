@@ -1,6 +1,14 @@
+import argparse
+
 if __name__=="__main__":
-        mpileup_path = "/shared/mae6/snv_calling_data/test/tnbc.mpileup"
-        out_path = "/shared/mae6/snv_calling_data/test/tnbc_global_idx.mpileup"
+        ap = argparse.ArgumentParser()
+        ap.add_argument("-mpileup", "--mpileup", required=True,
+                help="path to the original mpileup")
+        ap.add_argument("-out", "--out", required=True,
+                help="path to the output mpileup")
+        args = ap.parse_args()
+        mpileup_path = args.mpileup
+        out_path = args.out
         line_counter = 0
         outf = open(out_path, "w")
         with open(mpileup_path, "r") as infile:
