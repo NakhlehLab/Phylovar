@@ -62,22 +62,15 @@ python main.py -names cellnames.txt -out ./output/ -indir ./input/
 ## Reproducibility
 Here are the instructions for reproducing the results of the TNBC data containing 32 single-cells from a triple-negative breast cancer patient that is presented in the Phylovar paper.
 1. ### Filtering the non-informative sites
+   Here are the instructions for filtering the non-informative sites from a given mpileup file, before passing it as input to Phylovar. Not all genomic loci contain mutations, moreover, Phylovar has a limit on the number of loci so we need to filter out the unnecessary loci from the original mpileup.
    - #### Install SCIPhi with the modified scripts
      To run Phylovar on an example dataset whose results are presented in the paper, you would need to install SCIPhi following the instructions at its Github repository https://github.com/cbg-ethz/SCIPhI. Before installing SCIPhi, copy the modified scripts named `findBesttrees.cpp` and `readData.h` from the directory `sciphi_modified_scripts`. Then go to the `src` directory of SCIPhi and replace the files having the same names in there. These two modified files make SCIPhi to run only the initial statistic test for filtering the non-informative genomic loci without running the entire SCIPhi algorithm.
-   - #### Run `global_index_conversion.py` on the mpileup file
-     Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files into a *global* indexing starting from 1 to *N*  (the total number of positions), we wrote a simple script to make a copy of the original mpileup file with global indices. Go to `indexing_scripts` directory, change the `mpileup_path` (path to the original mpileup file) and `out_path` (path to the new mpileup file with global indices): https://github.com/NakhlehLab/Phylovar/blob/e4dc7b32767d0aa7ac7354d3695a3f0c959530f6/indexing_scripts/global_index_conversion.py#L2-L3
-     Then, run the code using:
+   - #### Run `global_index_conversion.py` on the original mpileup file
+     Since the output of SCIPhi's filtering algorithm rewrites the actual genomic positions in the original mpileup files into a *global* indexing starting from 1 to *N*  (the total number of positions), we wrote a simple script to make a copy of the original mpileup file with global indices. Go to `indexing_scripts` directory, and run `global_index_conversion.py` by specifying two arguments, namely, the `-mpileup` which is path to the original mpileup file and `-out` which is path to the new mpileup file with global indices. For example:
      ```
-     python global_index_conversion.py
+     python global_index_conversion.py -mpileup /path_to_the_mpileup_directory/tnbc.mpileup -out /path_to_the_output_directory/tnbc_global_idx.mpileup
      ```
      This will output a new mpileup (e.g. `tnbc_global_idx.mpileup`)
-   - #### Run `indexer.py` on the mpileup file
-     To preserve the original positions, we stored the global index, chromosome index, and the original local index of the positions into a file named `index.csv`. To create this file (which will be used later for recovering the local indices), go to `indexing_scripts`, change the `mpileup_path` (path to the original mpileup file) and `index_path` (path to the csv file containing all the indices): https://github.com/NakhlehLab/Phylovar/blob/8f707b6f552a5058402310c784b1b08f7f928b4b/indexing_scripts/indexer.py#L2-L3
-     Then, run the following:
-     ```
-     python indexer.py
-     ```
-     This will output the csv file (e.g. `index.csv`)
    - #### Prepare the list of cell names
      Along with the mpileup file, SCIPhi takes as input a list of cell names with their labels. According to the instructions in the Github repository of SCIPhi:
      > run SCIPhI using the cell names provided in cellNames.txt (same order as in the mpileup file). Note that cellNames.txt is a tab delimited file with the cell name in the first column and a cell type identifier in the second column. The cell type can be either CT (tumor cell), CN (control normal cell), or BN (control bulk normal)
