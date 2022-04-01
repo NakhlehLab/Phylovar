@@ -81,7 +81,10 @@ Here are the instructions for reproducing the results of the TNBC data containin
      ```
      cat <path to tnbc_global_idx.mpileup> | ./sciphi -o results --in <path to cellNames.txt>
      ```
-     This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test.
+     This command will generate a csv file named `genotype_matrix.csv` at the same location (`build`) that contains the selected genomic loci after the statistic test. After this step, run the following command on `genotype_matrix.csv` to remove the duplicated lines in the file:
+     ```
+     awk -F',' 'NF==27{print}{}' genotype_matrix.csv | sort | uniq
+     ```
    - #### Run `local_index_recovery.py`
      To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py`. `local_index_recovery.py` works with three arguments, `-mpileup` which is the original mpileup file with actual indices (`tnbc.mpileup`), `-sciphi` which is the output of SCIPhi filtering (`genotype_matrix.csv`), and `-out` which is the path to the output. The following is an example command to run this code:
      ```
