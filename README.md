@@ -90,7 +90,7 @@ Here are the instructions for reproducing the results of the TNBC data containin
      cut -f1-<number of cancer cells + 1> -d',' genotype_matrix.csv | uniq > genotype_matrix_new.csv
      ```
    - #### Run `local_index_recovery.py`
-     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py`. `local_index_recovery.py` works with three arguments, `-mpileup` which is the original mpileup file with actual indices (`tnbc.mpileup`), `-sciphi` which is the output of SCIPhi filtering (`genotype_matrix.csv`), and `-out` which is the path to the output. The following is an example command to run this code:
+     To retrieve the actual positions of the genomic sites, you need to run `local_index_recovery.py`. `local_index_recovery.py` works with three arguments, `-mpileup` which is the original mpileup file with actual indices (`tnbc.mpileup`), `-sciphi` which is the output of SCIPhi filtering (`genotype_matrix_new.csv` after removing the duplocated lines), and `-out` which is the path to the output. The following is an example command to run this code:
      ```
      python local_index_recovery.py -mpileup ./tnbc.mpileup -sciphi ./genotype_matrix_new.csv -out ./tnbc_local_idx.mpileup
      ```
